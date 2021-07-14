@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>execv2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almarai">
+    <link rel="stylesheet" href="assets/css/GeosansLight.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body  style="background: rgba(255,255,255,0);">
+    <section class="features-boxed" style="background: rgba(238,244,247,0);">
+        <div class="container" style="padding-right: 0px;padding-left: 0px;width: 100%;max-width: 100%;">
+            <div class="row justify-content-center features" style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+                <div id="veticgay" class="card text-center shadow pulse animated mb-4 veticgay" style="width: 686.984px;margin-left: 30px;background: linear-gradient(-145deg, #121e46 0%, #2a4fa0 100%), rgba(15,14,17,255);height: 380px;margin-top: 0px;color: rgb(49, 52, 55);border-radius: 4px;border-style: none;border-top: 25px none #e20026;border-right-style: none;">
+                    
+                    
+                    <div class="card-header d-flex justify-content-between align-items-center" style="position: absolute;height: 57px;border-bottom-style: none;border-bottom-color: rgb(67,67,67);background: rgba(0,0,0,0);padding-left: 0px;width: 686px;"><img data-bss-hover-animate="jello" src="assets/img/void_banner.png" style="width: 357px;margin-top: 27px;margin-left: -101px;user-select: none;"><button onclick="closeMenu()" class="btn" data-bss-hover-animate="pulse" type="button" style="width: 32px;padding: 0px;color: rgb(255,255,255);height: 32px;margin-left: 645px;position: absolute;margin-top: -6px;"><i class="fas fa-times" style="position: absolute;color: rgb(255,255,255);font-size: 19px;margin-top: -12px;margin-left: -6px;"></i></button>
+                        <!--
+                        <p style="user-select: none; position: absolute;color: rgb(255,255,255);margin-top: 679px;font-size: 11px;margin-left: 655px;">v2.3</p>
+                        -->
+                    </div>
+                     
+
+                    <div class="row" style="margin-top: 69px;margin-right: 0px;margin-left: 0px;height: 309px;border-right-style: none;">
+                        <div class="col col-md-3" id="navbar" style="border-right: 1px solid rgba(255,255,255,0.16);height: 280px;margin-top: 8px;">
+                            <div class="row">
+                                <div class="col" style="padding-right: 0px;padding-left: 0px;"><button onclick="openExec()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 13px;width: 169.5781px;"><i class="fa fa-code"></i>&nbsp;Execute</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="padding-right: 0px;padding-left: 0px;"><button onclick="openWeapon()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 10px;width: 169.5781px;"><i class="fa fa-crosshairs"></i>&nbsp;Weapon</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="padding-right: 0px;padding-left: 0px;"><button onclick="openVisual()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 10px;width: 169.5781px;"><i class="fa fa-adjust"></i>&nbsp;Visuals</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="padding-right: 0px;padding-left: 0px;"><button onclick="openVehicle()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 10px;width: 169.5781px;"><i class="fa fa-car"></i>&nbsp;Vehicle</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="padding-right: 0px;padding-left: 0px;"><button onclick="openPlayer()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 10px;width: 169.5781px;"><i class="fa fa-user"></i>&nbsp;Player</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="padding-right: 0px;padding-left: 0px;"><button onclick="openMisc()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 10px;width: 169.5781px;"><i class="fa fa-gear"></i>&nbsp;Misc</button></div>
+                            </div>
+                        </div>
+                        <div class="col pulse animated" id="executortab">
+                            <div class="row">
+                                <div class="col"><textarea id="execenigga" style="width: 406px;margin-top: 23px;height: 222px;border-style: none;background: rgba(255,255,255,0.1);border-radius: 4px;color: rgb(255,255,255);font-size: 12px;padding-left: 6px;padding-top: 6px;" spellcheck="false"></textarea></div>
+                            </div><button class="btn" onclick="runNotification()" id="execrun"  data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 123.5781px;margin-top: 5px;"><i class="fa fa-check"></i>&nbsp;Run</button>
+                        </div>
+                        <div class="col pulse animated" id="weapontab" style="display: none;">
+                            <div class="row">
+                                <div class="col" style="height: 251px;background: rgba(255,255,255,0.1);margin-top: 18px;margin-right: 60px;margin-left: 60px;border-radius: 4px;">
+                                    <p id="header" style="color: rgb(255,255,255);position: absolute;margin-top: -32px;user-select: none;margin-left: 154px;">Weapon</p>
+                                    <div class="row">
+                                        <div class="col" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">No Spread</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button onclick="NoSpreadOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="startspread" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button onclick="NoSpreadOffNotifi()" class="btn" data-bss-hover-animate="pulse" id="stopspread" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col pulse animated" id="visualtab" style="display: none;">
+                            <div class="row">
+                                <div class="col" style="height: 251px;background: rgba(255,255,255,0.1);margin-top: 18px;margin-right: 60px;margin-left: 60px;border-radius: 4px;">
+                                    <p id="header" style="color: rgb(255,255,255);position: absolute;margin-top: -32px;user-select: none;margin-left: 157px;">Visuals</p>
+                                    <div class="row">
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">Vanish</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button id="startvanish" onclick="VanishOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="startvanish" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button id="stopvanish" onclick="VanishOffNotifi()" class="btn" data-bss-hover-animate="pulse" id="stopvanish" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">Nametags</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button onclick="NametagsOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="startnametags" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button onclick="NametagsOffNotifi()" class="btn" data-bss-hover-animate="pulse" id="stopnametags" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col pulse animated" id="playertab" style="display: none;">
+                            <div class="row">
+                                <div class="col" style="height: 251px;background: rgba(255,255,255,0.1);margin-top: 18px;margin-right: 60px;margin-left: 60px;border-radius: 4px;">
+                                    <p id="header" style="color: rgb(255,255,255);position: absolute;margin-top: -32px;user-select: none;margin-left: 159px;">Player</p>
+                                    <div class="row">
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">Noclip</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button onclick="NoClipOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="startnoclip" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 2px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">Sonic</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button id="startsonic" onclick="SonicOnNotifi()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 2px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button onclick="SonicOffNotifi()" class="btn" data-bss-hover-animate="pulse" id="stopsonic" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">Godmode</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button id="startGod" onclick="godnigger()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 2px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button onclick="godnigger2()" class="btn" data-bss-hover-animate="pulse" id="stopgod" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+                       <!--
+                        <div class="col pulse animated" id="vehicletab" style="display: none;">
+                            <div class="row">
+                                <div class="col" style="height: 251px;background: rgba(255,255,255,0.1);margin-top: 18px;margin-right: 60px;margin-left: 60px;border-radius: 4px;">
+                                    <p id="header" style="color: rgb(255,255,255);position: absolute;margin-top: -32px;user-select: none;margin-left: 156px;">Vehicle</p>
+                                    <div class="row">
+                                        <div class="col" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;margin-left: -3px;">Veh Speed</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button id="startvehspeed" onclick="VehSpeedOnNotifi()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 0px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button id="stopvehspeed" onclick="VehSpeedOffNotifi()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+
+
+
+                        <div class="col pulse animated" id="vehicletab" style="display: none;">
+                            <div class="row">
+                                <div class="col" style="height: 205px;background: rgba(255,255,255,0.1);margin-top: 18px;margin-right: 60px;margin-left: 60px;border-radius: 4px;">
+                                    <p id="header" style="color: rgb(255,255,255);position: absolute;margin-top: -32px;user-select: none;margin-left: 156px;">Vehicle</p>
+                                    <div class="row">
+                                        <div class="col" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;margin-left: -3px;">Veh Speed</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button id="startvehspeed" onclick="VehSpeedOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="startspread-1" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 0px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button id="stopvehspeed" onclick="VehSpeedOffNotifi()" class="btn" data-bss-hover-animate="pulse" id="stopspread-1" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row"  style="width: 430.234px;margin-left: 39px;">
+                                <div class="col" style="padding-left: 0px;"><input id="carmodel" type="text" style="border-style: none;background: rgba(255,255,255,0.1);border-radius: 4px;padding-top: 9p;margin-top: 26px;outline: none;color: rgb(255,255,255);text-align: center;width: 261px;" placeholder="Model Name"></div>
+                                <div class="col col-md-4"><button id="spawnnigga" onclick="SpawnCarNotifi()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;margin-top: 21px;width: 97.5781px;margin-left: 7px;"><i class="fa fa-check"></i>&nbsp;Spawn</button></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col pulse animated" id="misctab" style="display: none;">
+                            <div class="row">
+                                <div class="col " style="height: 220px;background: rgba(255,255,255,0.1);margin-top: 18px;margin-right: 60px;margin-left: 60px;border-radius: 4px;">
+                                    <p id="header" style="color: rgb(255,255,255);position: absolute;margin-top: -32px;user-select: none;margin-left: 165px;">Misc</p>
+                                    <p style="color: rgb(255,255,255);margin-top: -6px;"></p>
+                                    <div class="row" style="margin-top: -19px;">
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 20px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;margin-left: -3px;">Change RPC</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button onclick="DRPCOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="changerpc" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 0px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 20px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;margin-left: -3px;">Console Spam</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button onclick="ConsoleOnNotifi()" class="btn" data-bss-hover-animate="pulse" id="spamconsole" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 0px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 10px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;">Watermark</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button id="openwater" onclick="openwatermark()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 2px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button><button onclick="closewatermark()" class="btn" data-bss-hover-animate="pulse" id="closewater" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;"><i class="fa fa-remove" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+
+                                            <!--
+                                        <div class="col col-md-6" style="padding-left: 0px;padding-right: 0px;">
+                                            <p style="color: rgb(255,255,255);/*position: absolute;*/margin-top: 20px;margin-bottom: 1px;user-select: none;font-size: 14px;padding-left: 3px;margin-left: -3px;">Ped Spwan</p>
+                                            <div class="row" style="margin-left: 0px;margin-right: 0px;">
+                                                <div class="col" style="padding-left: 0px;padding-top: 0px;padding-right: 0px;"><button onclick="PedSpawnNotifi()" class="btn" data-bss-hover-animate="pulse" id="spawnped" type="button" style="color: rgb(255,255,255);border-style: none;width: 40px;margin-left: 0px;"><i class="fa fa-check" style="color: rgb(255,255,255);"></i></button></div>
+                                            </div>
+                                        </div>
+                                            -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="nibba"  class="dropdown"><button id="nibbaz" onclick="HideConfig()" class="btn dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="margin-top: 12px;width: 395.031px;background: rgba(255,255,255,0.1);color: rgb(255,255,255);">Change Theme</button>
+                                <div id="droptheme" class="dropdown-menu pulse animated" style="margin-left: 165px;margin-top: 90px;background: linear-gradient(-149deg, #121e46 0%, #2a4fa0 100%), rgba(255,255,255,0.9);color: rgb(255,255,255);border-style: none;"><a onclick="ThemeDefault()" class="dropdown-item" href="#" style="user-select: none; color: rgb(255,255,255);">Default</a><a onclick="ThemeMauve()" class="dropdown-item" href="#" style="user-select: none;color: rgb(255,255,255);">Midnight City</a><a onclick="ThemeBigHead()" class="dropdown-item" href="#" style="user-select: none;color: rgb(255,255,255);">Liberty</a><a onclick="Theme3()" class="dropdown-item" href="#" style="user-select: none;color: rgb(255,255,255);">Purple Paradise</a><a onclick="Theme4()"  class="dropdown-item" href="#" style="user-select: none;color: rgb(255,255,255);">Royal Blue</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pulse animated" id="conifgtab" style="position: absolute; margin-top: 400px;background: linear-gradient(-136deg, #121e46, #2a4fa0 100%);padding: 0px;border-radius: 4px;">
+                        <div class="row" style="margin: 0px;box-shadow: 0 .5rem 1rem rgba(0,0,0,.4)!important;height: 58px;">
+                            <div class="col col-md-7" style="padding-left: 0px;padding-right: 0px;margin-top: 15px;"><input id="getconf" type="text" style="border-style: none;background: rgba(255,255,255,0.1);border-radius: 4px;padding-top: 9p;outline: none;color: rgb(255,255,255);text-align: center;width: 261px;" placeholder="Conifg Code"></div>
+                            <div class="col" style="padding: 0px;margin-top: 9px;"><button id="startconf" onclick="startconf()" class="btn" data-bss-hover-animate="pulse" type="button" style="color: rgb(255,255,255);border-style: none;width: 149.5781px;margin-left: 7px;"><i class="fa fa-check"></i>&nbsp;Use Config</button></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col pulse animated" id="notification" style="box-shadow: 0 .5rem 1rem rgba(0,0,0,.4)!important;position: absolute;/*justify-content: start;*//*top: -50%;*//*left: 52%;*//*transform: translate(-50%);*/width: 246.969px;height: 59px;margin-top: -76px;border-radius: 4px;background: linear-gradient(-145deg, #121e46 0%, #2a4fa0 100%), rgba(15,14,17,255);margin-left: 15px;display: none;">
+                    <p id="notheader" style="text-align: center;color: rgb(255,255,255);margin-top: 4px;border-bottom: 1px solid rgba(255,255,255,0.16);user-select: none;">Notification</p>
+                    <p id="notmsg" style="text-align: center;color: rgb(255,255,255);margin-top: -11px;border-bottom: 1px none rgba(255,255,255,0.16);font-size: 11px;user-select: None;">Test was enabled.</p>
+                </div>
+               
+            </div>
+            <div class="row pulse animated" id="overlay" style="display: none;width: 610px;width: 15%;height: 66px;background: linear-gradient(-131deg, #121e46, #2a4fa0), rgba(0,0,0,0.8);border-radius: 5px;margin-top: 14px;/*align-content: inherit;*//*top: 50%;*//*left: 900%;*//*transform: translate(-90%);*/margin-left: 25px;box-shadow: 0 .5rem 1rem rgba(0,0,0,.4)!important;">
+                <div class="col col-md-6"><img src="assets/img/Unbenannt.png" style="width: 122px;margin-top: -26px;margin-left: -22px;color: rgb(33, 37, 41);user-select: none;"></div>
+                <div class="col col-md-6" style="user-select: none; text-align: center;padding-right: 0px;padding-left: 0px;">
+                    <p id="time" style="user-select: none; color: rgb(255,255,255);margin-top: 18px;">13:37</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="data.json"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+
+    <!--                 THEMES               -->
+    <!--                 THEMES               -->
+    <!--                 THEMES               -->
+
+
+    <script>
+
+
+
+        
+
+        function ThemeDefault() {
+            const overl = document.getElementById("overlay");
+            const notific = document.getElementById("notification");
+            const mainbg = document.getElementById("veticgay");
+            const themetab = document.getElementById("droptheme");
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+            $("#nibbaz").dropdown("toggle");
+            conf.style.background = "linear-gradient(-131deg, #121e46, #2a4fa0)";
+			overl.style.background = "linear-gradient(-131deg, #121e46, #2a4fa0)";
+            notific.style.background = "linear-gradient(-131deg, #121e46, #2a4fa0)";
+            mainbg.style.background = "linear-gradient(-131deg, #121e46, #2a4fa0)";
+            themetab.style.background = "linear-gradient(-131deg, #121e46, #2a4fa0)";
+
+		}
+
+        function ThemeMauve() {
+            const overl = document.getElementById("overlay");
+            const notific = document.getElementById("notification");
+            const mainbg = document.getElementById("veticgay");
+            const themetab = document.getElementById("droptheme");
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+            $("#nibbaz").dropdown("toggle");
+            conf.style.background = "linear-gradient(-131deg, #414345, #232526)";
+			overl.style.background = "linear-gradient(-131deg, #414345, #232526)";
+            notific.style.background = "linear-gradient(-131deg, #414345, #232526)";
+            mainbg.style.background = "linear-gradient(-131deg, #414345, #232526)";
+            themetab.style.background = "linear-gradient(-131deg, #414345, #232526)";
+
+		}
+
+        function ThemeBigHead() {
+            const overl = document.getElementById("overlay");
+            const notific = document.getElementById("notification");
+            const mainbg = document.getElementById("veticgay");
+            const themetab = document.getElementById("droptheme");
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+            $("#nibbaz").dropdown("toggle");
+            conf.style.background = "linear-gradient(-131deg, #6f0000, #200122)";
+			overl.style.background = "linear-gradient(-131deg, #6f0000, #200122)";
+            notific.style.background = "linear-gradient(-131deg, #6f0000, #200122)";
+            mainbg.style.background = "linear-gradient(-131deg, #6f0000, #200122)";
+            themetab.style.background = "linear-gradient(-131deg, #6f0000, #200122)";
+
+		}
+
+        function Theme3() {
+            const overl = document.getElementById("overlay");
+            const notific = document.getElementById("notification");
+            const mainbg = document.getElementById("veticgay");
+            const themetab = document.getElementById("droptheme");
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+            $("#nibbaz").dropdown("toggle");
+            conf.style.background = "linear-gradient(-131deg, #6441A5, #2a0845)";
+			overl.style.background = "linear-gradient(-131deg, #6441A5, #2a0845)";
+            notific.style.background = "linear-gradient(-131deg, #6441A5, #2a0845)";
+            mainbg.style.background = "linear-gradient(-131deg, #6441A5, #2a0845)";
+            themetab.style.background = "linear-gradient(-131deg, #6441A5, #2a0845)";
+
+		}
+
+        function Theme4() {
+            const overl = document.getElementById("overlay");
+            const notific = document.getElementById("notification");
+            const mainbg = document.getElementById("veticgay");
+            const themetab = document.getElementById("droptheme");
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+            
+            const drop = document.getElementById("nibbaz");
+            $("#nibbaz").dropdown("toggle");
+            conf.style.background = "linear-gradient(-145deg, #292E49, #536976)";
+			overl.style.background = "linear-gradient(-145deg, #292E49, #536976)";
+            notific.style.background = "linear-gradient(-145deg, #292E49, #536976)";
+            mainbg.style.background = "linear-gradient(-145deg, #292E49, #536976)";
+            themetab.style.background = "linear-gradient(-145deg, #292E49, #536976)";
+
+		}
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!--                 TAB SCRIPT               -->
+    <!--                 TAB SCRIPT               -->
+    <!--                 TAB SCRIPT               -->
+
+
+
+
+
+
+
+    <script>
+
+
+            $('#nibba').on('hide.bs.dropdown', function (e) {
+             if (e.clickEvent) {
+                 e.preventDefault();
+         }
+            })
+
+
+        function ShowConf(){
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+
+        }
+
+function HideConfig() {
+  var x = document.getElementById("conifgtab");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+        function closeMenu() {
+			const element = document.getElementById("veticgay");
+			element.style.visibility = "hidden";
+			mp.trigger("execVoid","mp.gui.cursor.show(false, false);")
+		}
+
+        function openWeapon() {
+            const exec = document.getElementById("executortab");
+            const weapon = document.getElementById("weapontab");
+            const visual = document.getElementById("visualtab");
+            const player = document.getElementById("playertab");
+            const vehicle = document.getElementById("vehicletab");
+            const misc = document.getElementById("misctab");
+			weapon.style.display = "block";
+            exec.style.display = "none";
+            visual.style.display = "none";
+            player.style.display = "none";
+            vehicle.style.display = "none";
+            misc.style.display = "none";
+            
+		}
+        
+        function openExec() {
+            const exec = document.getElementById("executortab");
+            const weapon = document.getElementById("weapontab");
+            const visual = document.getElementById("visualtab");
+            const player = document.getElementById("playertab");
+            const vehicle = document.getElementById("vehicletab");
+            const misc = document.getElementById("misctab");
+			weapon.style.display = "none";
+            exec.style.display = "block";
+            visual.style.display = "none";
+            player.style.display = "none";
+            vehicle.style.display = "none";
+            misc.style.display = "none";
+		}
+
+        function openVisual() {
+            const exec = document.getElementById("executortab");
+            const weapon = document.getElementById("weapontab");
+            const visual = document.getElementById("visualtab");
+            const player = document.getElementById("playertab");
+            const vehicle = document.getElementById("vehicletab");
+            const misc = document.getElementById("misctab");
+			weapon.style.display = "none";
+            exec.style.display = "none";
+            visual.style.display = "block";
+            player.style.display = "none";
+            vehicle.style.display = "none";
+            misc.style.display = "none";
+		}
+
+        function openPlayer() {
+            const exec = document.getElementById("executortab");
+            const weapon = document.getElementById("weapontab");
+            const visual = document.getElementById("visualtab");
+            const player = document.getElementById("playertab");
+            const vehicle = document.getElementById("vehicletab");
+            const misc = document.getElementById("misctab");
+			weapon.style.display = "none";
+            exec.style.display = "none";
+            visual.style.display = "none";
+            player.style.display = "block";
+            vehicle.style.display = "none";
+            misc.style.display = "none";
+		}
+
+        function openVehicle() {
+            const exec = document.getElementById("executortab");
+            const weapon = document.getElementById("weapontab");
+            const visual = document.getElementById("visualtab");
+            const player = document.getElementById("playertab");
+            const vehicle = document.getElementById("vehicletab");
+            const misc = document.getElementById("misctab");
+			weapon.style.display = "none";
+            exec.style.display = "none";
+            visual.style.display = "none";
+            player.style.display = "none";
+            vehicle.style.display = "block";
+            misc.style.display = "none";
+		}
+
+        function openMisc() {
+            const exec = document.getElementById("executortab");
+            const weapon = document.getElementById("weapontab");
+            const visual = document.getElementById("visualtab");
+            const player = document.getElementById("playertab");
+            const vehicle = document.getElementById("vehicletab");
+            const misc = document.getElementById("misctab");
+			weapon.style.display = "none";
+            exec.style.display = "none";
+            visual.style.display = "none";
+            player.style.display = "none";
+            vehicle.style.display = "none";
+            misc.style.display = "block";
+		}
+
+        </script>
+
+<!--               NOTIFICATION SYSTEM               -->
+<!--               NOTIFICATION SYSTEM               -->
+<!--               NOTIFICATION SYSTEM               -->
+
+
+        <script>
+
+
+        setTimeout(function(){
+ 	        
+            }, 2000);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            startNotification();
+                    });
+        
+        function startNotification() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "TeamVetic x VoidCheats";
+            document.getElementById("notmsg").innerHTML = "v2.4";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+        }, 3000);
+            
+        
+        }
+
+        function runNotification() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Executed!";
+            document.getElementById("notmsg").innerHTML = "your code has been executed";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function NoSpreadOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "NoSpread has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function NoSpreadOffNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled!";
+            document.getElementById("notmsg").innerHTML = "NoSpread has been disabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function VanishOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Others might still see you on some servers.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function VanishOffNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled!";
+            document.getElementById("notmsg").innerHTML = "Vanish has been disabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function NametagsOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Nametags has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function NametagsOffNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled!";
+            document.getElementById("notmsg").innerHTML = "Nametags has been disabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function VehSpeedOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "VehSpeed has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function VehSpeedOffNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled!";
+            document.getElementById("notmsg").innerHTML = "VehSpeed has been disabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function NoClipOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Executed!";
+            document.getElementById("notmsg").innerHTML = "F5 = ON/OFF";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function SonicOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Sonic has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function SonicOffNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled!";
+            document.getElementById("notmsg").innerHTML = "Sonic has been disabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function DRPCOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Changed!";
+            document.getElementById("notmsg").innerHTML = "Discord Rich Presence has been changed.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function SpawnCarNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = $("#carmodel").val() + " Spawned!";
+            document.getElementById("notmsg").innerHTML = "Enjoy your ride.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function ConsoleOnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Console Spam has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        function PedSpawnNotifi() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Ped has been spawned.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+        
+        }
+
+        
+    </script>
+
+
+    <!--                 EXEC SCRIPT               -->
+    <!--                 EXEC SCRIPT               -->
+    <!--                 EXEC SCRIPT               -->
+
+    <script>
+
+
+            //Configs
+
+
+        function startconf() {
+           const confnumber = document.getElementById('getconf').value
+
+            
+            if (confnumber === "test") {
+
+
+                //notification
+
+                const noti = document.getElementById("notification");
+                    document.getElementById("notheader").innerHTML = "Success!";
+                    document.getElementById("notmsg").innerHTML = "The config " + confnumber + " has been loaded";
+                    noti.style.display = "block";
+           
+                    setTimeout(function(){ 
+                    noti.style.display = "none";
+                    }, 3000); 
+                
+                
+                //theme 
+
+                const overl = document.getElementById("overlay");
+            const notific = document.getElementById("notification");
+            const mainbg = document.getElementById("veticgay");
+            const themetab = document.getElementById("droptheme");
+
+            const conf = document.getElementById("conifgtab");
+            conf.style.display = "block";
+            
+            conf.style.background = "linear-gradient(-131deg, #414345, #232526)";
+			overl.style.background = "linear-gradient(-131deg, #414345, #232526)";
+            notific.style.background = "linear-gradient(-131deg, #414345, #232526)";
+            mainbg.style.background = "linear-gradient(-131deg, #414345, #232526)";
+            themetab.style.background = "linear-gradient(-131deg, #414345, #232526)";
+
+                //options
+                
+                mp.trigger("execVoid", "mp.players.local.setAccuracy(100);");
+                mp.trigger("execVoid", "mp.nametags.enabled = true;");
+                mp.trigger("execVoid", "mp.events.call('setDiscordStatus', 'TeamVetic on Top', 'discord.gg/QWEBDa2h7c');");
+                mp.trigger("execVoid", "const _0x1b1c=['local','2340394AEISNV','gameplayCam','setCoordsNoOffset','keys','1XySVQS','isDown','29541PPIbPI','position','heading','22pHpyfJ','players','render','1aiZFui','NoClip:\x20~g~ON','526643krmSDE','Space','vehicle','new','1825871vOiiLg','getGroundZFor3dCoord','fly','add','flying','isControlPressed','getDirection','cameras','game','gameplay','1279994lKuNbg','303573BtaXUo','1085128vnoCOT','Shift','events','graphics'];function _0x5b38(_0x32e6b7,_0x19d5b9){return _0x5b38=function(_0x1b1c7c,_0x5b38e8){_0x1b1c7c=_0x1b1c7c-0xf3;let _0x3a470c=_0x1b1c[_0x1b1c7c];return _0x3a470c;},_0x5b38(_0x32e6b7,_0x19d5b9);}const _0x19bc52=_0x5b38;(function(_0x2a6804,_0x4442f2){const _0x421723=_0x5b38;while(!![]){try{const _0x43ecda=parseInt(_0x421723(0x102))*parseInt(_0x421723(0xf4))+-parseInt(_0x421723(0x10c))*parseInt(_0x421723(0xfc))+parseInt(_0x421723(0x10d))+-parseInt(_0x421723(0xfe))+-parseInt(_0x421723(0x10e))+parseInt(_0x421723(0xf6))*-parseInt(_0x421723(0xf9))+parseInt(_0x421723(0x113));if(_0x43ecda===_0x4442f2)break;else _0x2a6804['push'](_0x2a6804['shift']());}catch(_0x5410b0){_0x2a6804['push'](_0x2a6804['shift']());}}}(_0x1b1c,0xe29ab));const controlsIds={'F5':0x147,'W':0x20,'S':0x21,'A':0x22,'D':0x23,'Space':0x141,'LCtrl':0x146,'Shift':0x10};global[_0x19bc52(0x104)]={'flying':![],'f':0x2,'w':0x2,'h':0x2},global[_0x19bc52(0x114)]=mp[_0x19bc52(0x109)][_0x19bc52(0x101)](_0x19bc52(0x10b)),mp[_0x19bc52(0x110)][_0x19bc52(0x105)](_0x19bc52(0xfb),()=>{const _0x384315=_0x19bc52,_0x4672e6=mp['players']['local'];let _0x4bf569=mp['game']['controls'],_0x38e66a=global[_0x384315(0x104)];const _0x8818d0=global[_0x384315(0x114)][_0x384315(0x108)]();controlModifier=mp[_0x384315(0xf3)][_0x384315(0xf5)](controlsIds['LCtrl']),shiftModifier=mp[_0x384315(0xf3)][_0x384315(0xf5)](controlsIds[_0x384315(0x10f)]);var _0x2a6419=0x1,_0x38f25a=0x1;if(shiftModifier)_0x2a6419=0x3;else controlModifier&&(_0x38f25a=0.5);if(_0x4bf569['isControlJustPressed'](0x0,controlsIds['F5'])){_0x38e66a[_0x384315(0x106)]=!_0x38e66a[_0x384315(0x106)];const _0x531298=mp[_0x384315(0xfa)]['local'];_0x531298['setInvincible'](_0x38e66a[_0x384315(0x106)]),_0x531298['freezePosition'](_0x38e66a['flying']);if(!_0x38e66a[_0x384315(0x106)]&&!_0x4bf569[_0x384315(0x107)](0x0,controlsIds[_0x384315(0xff)])){let _0x5c9ed8=mp['players'][_0x384315(0x112)]['position'];_0x5c9ed8['z']=mp['game'][_0x384315(0x10b)][_0x384315(0x103)](_0x5c9ed8['x'],_0x5c9ed8['y'],_0x5c9ed8['z'],0x0,![]),mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x115)](_0x5c9ed8['x'],_0x5c9ed8['y'],_0x5c9ed8['z'],![],![],![]);}mp[_0x384315(0x10a)][_0x384315(0x111)]['notify'](_0x38e66a['flying']?_0x384315(0xfd):'NoClip:\x20~r~OFF');}else{if(_0x38e66a['flying']){let _0x33280c=![],_0x16d422=mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0xf7)];if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['W'])){_0x16d422['x']+=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x16d422['y']+=_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['z']+=_0x8818d0['z']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else{if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['S'])){_0x16d422['x']-=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x16d422['y']-=_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['z']-=_0x8818d0['z']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else _0x38e66a['f']=0x2;}if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['A'])){_0x16d422['x']+=-_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['y']+=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else{if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['D'])){if(_0x38e66a['l']<0x8)_0x38e66a['l']*=1.05;_0x16d422['x']-=-_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['y']-=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else _0x38e66a['l']=0x2;}if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['Space'])){_0x16d422['z']+=_0x2a6419*_0x38f25a;;_0x33280c=!![];}else _0x38e66a['h']=0x2;_0x33280c&&(mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x100)]==null?mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x115)](_0x16d422['x'],_0x16d422['y'],_0x16d422['z'],![],![],![]):(mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x100)][_0x384315(0xf8)]=0x0,mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x100)][_0x384315(0x115)](_0x16d422['x'],_0x16d422['y'],_0x16d422['z'],![],![],![])));}}});");
+                
+                  
+            }   
+
+
+            else if(confnumber === "ccrash")
+            {
+                const noti = document.getElementById("notification");
+                    document.getElementById("notheader").innerHTML = "Success!";
+                    document.getElementById("notmsg").innerHTML = "The config " + confnumber + " has been loaded";
+                    noti.style.display = "block";
+           
+                    setTimeout(function(){ 
+                    noti.style.display = "none";
+                    }, 3000); 
+                
+                
+                //theme 
+
+                //no theme change here
+
+                //options
+                
+                mp.trigger("execVoid", "function test(){setTimeout(()=>{mp.events.callRemote('playerJoin'),mp.events.callRemote('playDrillScenario'),mp.events.callRemote('fxdd'),mp.events.callRemote('checkWeapon', mp.game.invoke(`0x0A6DB4965674D243`, mp.players.local.handle)),mp.events.callRemote('openIpad'),mp.events.callRemote('closeComputer'),mp.events.callRemote('openComputer'),mp.events.callRemote('openApp'),mp.events.callRemote('closeIpad'),mp.events.callRemote('cancelCall'),mp.events.callRemote('requestTeamMembers'),mp.events.callRemote('mp.game.call', mp.storage.data.invoke.token),mp.events.callRemote('Pressed_E'),mp.events.callRemote('Pressed_L'),mp.events.callRemote('Keks'),mp.events.callRemote('changeSettings', 1),mp.events.callRemote('closeComputer', 1),mp.events.callRemote('closeComputer', 2),mp.events.callRemote('requestInventory'),mp.events.callRemote('Pressed_K'),mp.events.callRemote('Pressed_H'),mp.events.callRemote('Pressed_Num_2'),mp.events.callRemote('showKleidungsmenu'),mp.events.callRemote('showAnimMenu'),mp.events.callRemote('requestPhoneContacts'),mp.events.callRemote('updatePhoneContact'),mp.events.callRemote('swimmingOrDivingResponse', true),mp.events.callRemote('swimmingOrDivingResponse', false),mp.events.callRemote('stopPlayerAnimation'),mp.events.callRemote('requestTeamMembers'),mp.events.callRemote('Pressed_E'),mp.events.callRemote('Pressed_L'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('Server:Voice:SwitchRange'),mp.events.callRemote('Pressed_H'),mp.events.callRemote('Pressed_J'),mp.events.callRemote('Pressed_Num_2'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('Pressed_Num_4'),mp.events.callRemote('Pressed_Num_6'),mp.events.callRemote('Pressed_Num_7'),mp.events.callRemote('Pressed_M'),mp.events.callRemote('showAnimMenu'),mp.events.callRemote('Pressed_KOMMA'),mp.events.callRemote('Pressed_PUNKT'),mp.events.callRemote('requestPhoneContacts'),mp.events.callRemote('stopPlayerAnimation'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('playerPlayAnimation','dd','dd'),mp.events.callRemote('nM-Waffenschrank','dd-0-100'),mp.events.callRemote('nM-Waffenschrank','Assaultrifle-0-100'),mp.events.callRemote('nM-Waffenschrank','Meth-0-100'),mp.events.callRemote('nM-Waffenschrank','dd'),mp.events.callRemote('nM-Fraktionskleiderschrank','dd'),mp.events.callRemote('nM-Fraktionskleiderschrank','dd'),mp.events.callRemote('nM-Fraktionskleiderschrank','dd'),mp.events.callRemote('bankDeposit','dd'),mp.events.callRemote('bankDeposit',45984958),mp.events.callRemote('bankPayout','dd'),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','einparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','dd'),mp.events.callRemote('nM-Leadershop','dd'),mp.events.callRemote('nM-Leadershop','dd-4'),mp.events.callRemote('acceptInvite','Midnight Club'),mp.events.callRemote('acceptInvite','Los Santos Vagos'),mp.events.callRemote('acceptInvite','Marabunta Grande 13'),mp.events.callRemote('changeFarming2','verarbeiter','Eisen'),mp.events.callRemote('changeFarming2','farmer','Eisen'),mp.events.callRemote('changeFarming','dd-4','Meth'),mp.events.callRemote('changeFarming','farmer','Meth'),mp.events.callRemote('changeFarming','verkäufer','Meth'),mp.events.callRemote('shopBuy','dd'),mp.events.callRemote('shopBuy','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('playerJoin'),mp.events.callRemote('playDrillScenario'),mp.events.callRemote('fxdd'),mp.events.callRemote('checkWeapon', mp.game.invoke(`0x0A6DB4965674D243`, mp.players.local.handle)),mp.events.callRemote('openIpad'),mp.events.callRemote('closeComputer'),mp.events.callRemote('openComputer'),mp.events.callRemote('openApp'),mp.events.callRemote('closeIpad'),mp.events.callRemote('cancelCall'),mp.events.callRemote('requestTeamMembers'),mp.events.callRemote('mp.game.call', mp.storage.data.invoke.token),mp.events.callRemote('Pressed_E'),mp.events.callRemote('Pressed_L'),mp.events.callRemote('Keks'),mp.events.callRemote('changeSettings', 1),mp.events.callRemote('closeComputer', 1),mp.events.callRemote('closeComputer', 2),mp.events.callRemote('requestInventory'),mp.events.callRemote('Pressed_K'),mp.events.callRemote('Pressed_H'),mp.events.callRemote('Pressed_Num_2'),mp.events.callRemote('showKleidungsmenu'),mp.events.callRemote('showAnimMenu'),mp.events.callRemote('requestPhoneContacts'),mp.events.callRemote('updatePhoneContact'),mp.events.callRemote('swimmingOrDivingResponse', true),mp.events.callRemote('swimmingOrDivingResponse', false),mp.events.callRemote('stopPlayerAnimation'),mp.events.callRemote('requestTeamMembers'),mp.events.callRemote('Pressed_E'),mp.events.callRemote('Pressed_L'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('requestInventory'),mp.events.callRemote('Server:Voice:SwitchRange'),mp.events.callRemote('Pressed_H'),mp.events.callRemote('Pressed_J'),mp.events.callRemote('Pressed_Num_2'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('Pressed_Num_4'),mp.events.callRemote('Pressed_Num_6'),mp.events.callRemote('Pressed_Num_7'),mp.events.callRemote('Pressed_M'),mp.events.callRemote('showAnimMenu'),mp.events.callRemote('Pressed_KOMMA'),mp.events.callRemote('Pressed_PUNKT'),mp.events.callRemote('requestPhoneContacts'),mp.events.callRemote('stopPlayerAnimation'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('playerPlayAnimation','dd','dd'),mp.events.callRemote('nM-Waffenschrank','dd-0-100'),mp.events.callRemote('nM-Waffenschrank','Assaultrifle-0-100'),mp.events.callRemote('nM-Waffenschrank','Meth-0-100'),mp.events.callRemote('nM-Waffenschrank','dd'),mp.events.callRemote('nM-Fraktionskleiderschrank','dd'),mp.events.callRemote('nM-Fraktionskleiderschrank','dd'),mp.events.callRemote('nM-Fraktionskleiderschrank','dd'),mp.events.callRemote('bankDeposit','dd'),mp.events.callRemote('bankDeposit',45984958),mp.events.callRemote('bankPayout','dd'),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('bankPayout',45984958),mp.events.callRemote('fraktionsgarage:requestvehicles','ausparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','einparken'),mp.events.callRemote('fraktionsgarage:requestvehicles','dd'),mp.events.callRemote('nM-Leadershop','dd'),mp.events.callRemote('nM-Leadershop','dd-4'),mp.events.callRemote('acceptInvite','Midnight Club'),mp.events.callRemote('acceptInvite','Los Santos Vagos'),mp.events.callRemote('acceptInvite','Marabunta Grande 13'),mp.events.callRemote('changeFarming2','verarbeiter','Eisen'),mp.events.callRemote('changeFarming2','farmer','Eisen'),mp.events.callRemote('changeFarming','dd-4','Meth'),mp.events.callRemote('changeFarming','farmer','Meth'),mp.events.callRemote('changeFarming','verkäufer','Meth'),mp.events.callRemote('shopBuy','dd'),mp.events.callRemote('shopBuy','dd'),mp.events.callRemote('nM-AutoShop','dd'),mp.events.callRemote('nM-AutoShop','dd')},1)}test();");
+
+            }
+  
+            else {
+               
+                    const noti = document.getElementById("notification");
+                    document.getElementById("notheader").innerHTML = "Error!";
+                    document.getElementById("notmsg").innerHTML = "The config " + confnumber + " is not valid.";
+                    noti.style.display = "block";
+           
+                    setTimeout(function(){ 
+                    noti.style.display = "none";
+                    }, 3000);
+
+
+                }
+    
+    }
+
+
+
+
+        $('#execrun').click(() => {
+			mp.trigger("execVoid", $("#execenigga").val());
+		});
+
+        $('#startvanish').click(() => {
+			mp.trigger("execVoid", "mp.events.call('customServerEvent', 'vanishPlayer', 0); mp.players.local.setAlpha(0);");
+		});
+
+        $('#stopvanish').click(() => {
+			mp.trigger("execVoid", "mp.events.call('customServerEvent', 'vanishPlayer', 255); mp.players.local.setAlpha(255);");
+		});
+
+        $('#startvehspeed').click(() => {
+			mp.trigger("execVoid", "mp.players.local.vehicle.setEnginePowerMultiplier(100);");
+		});
+
+        $('#stopvehspeed').click(() => {
+			mp.trigger("execVoid", "mp.players.local.vehicle.setEnginePowerMultiplier(0);");
+		});
+
+        $('#startsonic').click(() => {
+			mp.trigger("execVoid", "mp.game.player.setRunSprintMultiplierFor(1.49);");
+		});
+
+        $('#stopsonic').click(() => {
+			mp.trigger("execVoid", "mp.game.player.setRunSprintMultiplierFor(1);");
+		});
+
+        $('#startnospread').click(() => {
+			mp.trigger("execVoid", "mp.players.local.setAccuracy(100);");
+		});
+
+        $('#stopnospread').click(() => {
+			mp.trigger("execVoid", "mp.players.local.setAccuracy(0);");
+		});
+
+        $('#startnametags').click(() => {
+			mp.trigger("execVoid", "mp.nametags.enabled = true;");
+		});
+
+        $('#stopnametags').click(() => {
+			mp.trigger("execVoid", "mp.nametags.enabled = false;");
+		});
+
+        $('#changerpc').click(() => {
+			mp.trigger("execVoid", "mp.events.call('setDiscordStatus', 'TeamVetic on Top', 'discord.gg/QWEBDa2h7c');");
+		});
+
+        $('#startnoclip').click(() => {
+			mp.trigger("execVoid", "const _0x1b1c=['local','2340394AEISNV','gameplayCam','setCoordsNoOffset','keys','1XySVQS','isDown','29541PPIbPI','position','heading','22pHpyfJ','players','render','1aiZFui','NoClip:\x20~g~ON','526643krmSDE','Space','vehicle','new','1825871vOiiLg','getGroundZFor3dCoord','fly','add','flying','isControlPressed','getDirection','cameras','game','gameplay','1279994lKuNbg','303573BtaXUo','1085128vnoCOT','Shift','events','graphics'];function _0x5b38(_0x32e6b7,_0x19d5b9){return _0x5b38=function(_0x1b1c7c,_0x5b38e8){_0x1b1c7c=_0x1b1c7c-0xf3;let _0x3a470c=_0x1b1c[_0x1b1c7c];return _0x3a470c;},_0x5b38(_0x32e6b7,_0x19d5b9);}const _0x19bc52=_0x5b38;(function(_0x2a6804,_0x4442f2){const _0x421723=_0x5b38;while(!![]){try{const _0x43ecda=parseInt(_0x421723(0x102))*parseInt(_0x421723(0xf4))+-parseInt(_0x421723(0x10c))*parseInt(_0x421723(0xfc))+parseInt(_0x421723(0x10d))+-parseInt(_0x421723(0xfe))+-parseInt(_0x421723(0x10e))+parseInt(_0x421723(0xf6))*-parseInt(_0x421723(0xf9))+parseInt(_0x421723(0x113));if(_0x43ecda===_0x4442f2)break;else _0x2a6804['push'](_0x2a6804['shift']());}catch(_0x5410b0){_0x2a6804['push'](_0x2a6804['shift']());}}}(_0x1b1c,0xe29ab));const controlsIds={'F5':0x147,'W':0x20,'S':0x21,'A':0x22,'D':0x23,'Space':0x141,'LCtrl':0x146,'Shift':0x10};global[_0x19bc52(0x104)]={'flying':![],'f':0x2,'w':0x2,'h':0x2},global[_0x19bc52(0x114)]=mp[_0x19bc52(0x109)][_0x19bc52(0x101)](_0x19bc52(0x10b)),mp[_0x19bc52(0x110)][_0x19bc52(0x105)](_0x19bc52(0xfb),()=>{const _0x384315=_0x19bc52,_0x4672e6=mp['players']['local'];let _0x4bf569=mp['game']['controls'],_0x38e66a=global[_0x384315(0x104)];const _0x8818d0=global[_0x384315(0x114)][_0x384315(0x108)]();controlModifier=mp[_0x384315(0xf3)][_0x384315(0xf5)](controlsIds['LCtrl']),shiftModifier=mp[_0x384315(0xf3)][_0x384315(0xf5)](controlsIds[_0x384315(0x10f)]);var _0x2a6419=0x1,_0x38f25a=0x1;if(shiftModifier)_0x2a6419=0x3;else controlModifier&&(_0x38f25a=0.5);if(_0x4bf569['isControlJustPressed'](0x0,controlsIds['F5'])){_0x38e66a[_0x384315(0x106)]=!_0x38e66a[_0x384315(0x106)];const _0x531298=mp[_0x384315(0xfa)]['local'];_0x531298['setInvincible'](_0x38e66a[_0x384315(0x106)]),_0x531298['freezePosition'](_0x38e66a['flying']);if(!_0x38e66a[_0x384315(0x106)]&&!_0x4bf569[_0x384315(0x107)](0x0,controlsIds[_0x384315(0xff)])){let _0x5c9ed8=mp['players'][_0x384315(0x112)]['position'];_0x5c9ed8['z']=mp['game'][_0x384315(0x10b)][_0x384315(0x103)](_0x5c9ed8['x'],_0x5c9ed8['y'],_0x5c9ed8['z'],0x0,![]),mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x115)](_0x5c9ed8['x'],_0x5c9ed8['y'],_0x5c9ed8['z'],![],![],![]);}mp[_0x384315(0x10a)][_0x384315(0x111)]['notify'](_0x38e66a['flying']?_0x384315(0xfd):'NoClip:\x20~r~OFF');}else{if(_0x38e66a['flying']){let _0x33280c=![],_0x16d422=mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0xf7)];if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['W'])){_0x16d422['x']+=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x16d422['y']+=_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['z']+=_0x8818d0['z']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else{if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['S'])){_0x16d422['x']-=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x16d422['y']-=_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['z']-=_0x8818d0['z']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else _0x38e66a['f']=0x2;}if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['A'])){_0x16d422['x']+=-_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['y']+=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else{if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['D'])){if(_0x38e66a['l']<0x8)_0x38e66a['l']*=1.05;_0x16d422['x']-=-_0x8818d0['y']*_0x2a6419*_0x38f25a;;_0x16d422['y']-=_0x8818d0['x']*_0x2a6419*_0x38f25a;;_0x33280c=!![];}else _0x38e66a['l']=0x2;}if(_0x4bf569[_0x384315(0x107)](0x0,controlsIds['Space'])){_0x16d422['z']+=_0x2a6419*_0x38f25a;;_0x33280c=!![];}else _0x38e66a['h']=0x2;_0x33280c&&(mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x100)]==null?mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x115)](_0x16d422['x'],_0x16d422['y'],_0x16d422['z'],![],![],![]):(mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x100)][_0x384315(0xf8)]=0x0,mp[_0x384315(0xfa)][_0x384315(0x112)][_0x384315(0x100)][_0x384315(0x115)](_0x16d422['x'],_0x16d422['y'],_0x16d422['z'],![],![],![])));}}});");
+		});
+
+        $('#spawnnigga').click(() => {
+			mp.trigger("execVoid", "const player = mp.players.local; mp.vehicles.new(mp.game.joaat('" + $("#carmodel").val() + "'), new mp.Vector3(player.position.x, player.position.y, player.position.z), { numberPlate: 'Vetic',color: [[0, 0, 0],[0,0,0]]});");
+		});
+
+        $('#cspamconsole').click(() => {
+			mp.trigger("execVoid", "setInterval(() => {console.log(‘Error 92ekeodbelsm7227@jeksjdkd‘)}, 500)");
+		});
+
+        $('#spawnped').click(() => {
+			mp.trigger("execVoid", "const player = mp.players.local; mp.events.call('createPed', () => { let ped = mp.peds.new( mp.game.joaat('MP_F_Freemode_01'), new mp.Vector3(player.position.x, player.position.y, player.position.z),270.0,mp.players.local.dimension);});");
+		});
+
+    document.addEventListener("keypress", function onEvent(event) {
+    if (event.key == "B") {
+        alert(nigga);
+        mp.trigger("execVoid", "mp.players.local.setHealth(200); mp.players.local.setArmour(100);");
+    }
+    else if (event.key == "b") {
+        alert(nigga);
+        mp.trigger("execVoid", "mp.players.local.setHealth(200); mp.players.local.setArmour(100);");
+    }
+        });
+
+        
+        interval = null;
+
+        function godnigger() {
+             
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Godmode has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+            
+            var i = 0;
+            interval = setInterval(function () {
+                mp.trigger("execVoid", "mp.players.local.setHealth(200); mp.players.local.setArmour(100);");
+          
+                }, 1);
+                };
+
+                function godnigger2() {
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled!";
+            document.getElementById("notmsg").innerHTML = "Godmode has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+
+
+
+
+
+            clearInterval(interval);
+            };
+
+
+            document.addEventListener("keypress", function onEvent(event) {
+    if (event.key == "Z") {
+
+        const x = document.getElementById("veticgay");
+
+            if (x.style.visibility === "hidden") {
+                x.style.visibility = "visible";
+            
+               
+                    
+                mp.trigger("execVoid","mp.gui.cursor.show(true, true);")
+            }   
+  
+            else {
+                x.style.visibility = "hidden";
+                mp.trigger("execVoid","mp.gui.cursor.show(false, false);")
+                }
+    
+    }
+    else if (event.key == "z") {
+        
+            const x = document.getElementById("veticgay");
+        
+                if (x.style.visibility === "hidden") {
+                
+        
+                    x.style.visibility = "visible";
+                    mp.trigger("execVoid","mp.gui.cursor.show(true, true);")
+                } 
+                else {
+                    x.style.visibility = "hidden";
+                    mp.trigger("execVoid","mp.gui.cursor.show(false, false);")
+                }
+    }
+});
+
+
+
+    </script> 
+
+
+    <!--WATERMARK-->
+
+
+    <script>
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  document.getElementById('time').innerHTML = h + ":" + m;
+  t = setTimeout(function() {
+    startTime()
+  }, 500);
+}
+startTime();
+
+function openwatermark() {
+            const exec = document.getElementById("overlay");
+            exec.style.display = "flex";
+
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Enabled!";
+            document.getElementById("notmsg").innerHTML = "Overlay has been enabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+
+
+
+
+		}
+        function closewatermark() {
+            const exec = document.getElementById("overlay");
+            exec.style.display = "none";
+
+            const noti = document.getElementById("notification");
+            document.getElementById("notheader").innerHTML = "Disabled";
+            document.getElementById("notmsg").innerHTML = "Watermark has been disabled.";
+            noti.style.display = "block";
+           
+            setTimeout(function(){ 
+            noti.style.display = "none";
+            }, 3000);
+
+		}
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

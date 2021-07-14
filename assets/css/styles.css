@@ -1,0 +1,43 @@
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .0rem rgba(0,123,255,.25);
+}
+
+textarea {
+  outline: none;
+  resize: none;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.4)!important;
+}
+
+input::placeholder {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+@media (min-width:1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+  }
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #16181b;
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.1);
+}
+
+
